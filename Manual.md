@@ -39,4 +39,6 @@ __gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co "TILED=YES" -co "COM
 # CAPA DE FONDO
 -------------------------------
 ### Descarga de Imagenes
-   Descargamos las 8 imagenes PNG de la página https://visibleearth.nasa.gov/view.php?id=73909
+   Descargamos las 8 imagenes PNG del proyecto Blue Marble (*[ir a la página][1]*) 
+   
+   [1]: https://visibleearth.nasa.gov/view.php?id=73909
