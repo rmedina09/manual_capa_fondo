@@ -38,7 +38,7 @@
 
 ***************************
 # COMANDOS
----------------------------
+
 ### Como georeferenciar una imagen .PNG
 #### Se tienen dos maneras para georeferenciar la imagen usando __gdal_translate__
 1. Usando la bandera __-gcp__  
