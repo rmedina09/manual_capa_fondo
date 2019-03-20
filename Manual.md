@@ -36,9 +36,28 @@ __gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co "TILED=YES" -co "COM
 
 
 -------------------------------
-# CAPA DE FONDO
+# GENERAR CAPA DE FONDO
 -------------------------------
 ### Descarga de Imagenes
-   Descargamos las 8 imagenes PNG del proyecto Blue Marble (*[ir a la página][1]*) 
+   Descargamos las 8 imagenes PNG del proyecto Blue Marble (*[ir a la página][1]*) :
+   1. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.A1.png A1.tif_
+   2. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.A2.png A2.tif_
+   3. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.B1.png B1.tif_
+   4. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.B2.png B2.tif_
+   5. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.C1.png C1.tif_
+   6. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.C2.png C2.tif_
+   7. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.D1.png D1.tif_
+   8. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.D2.png D2.tif_
    
    [1]: https://visibleearth.nasa.gov/view.php?id=73909
+
+### Georeferenciar imagenes
+   A cada imagen que descargamos hacemos la georefencia de coordenadas:  
+   1. world.topo.bathy.200412.3x21600x21600.A1.png
+   2. world.topo.bathy.200412.3x21600x21600.A2.png
+   3. world.topo.bathy.200412.3x21600x21600.B1.png
+   4. world.topo.bathy.200412.3x21600x21600.B2.png
+   5. world.topo.bathy.200412.3x21600x21600.C1.png
+   6. world.topo.bathy.200412.3x21600x21600.C2.png
+   7. world.topo.bathy.200412.3x21600x21600.D1.png
+   8. world.topo.bathy.200412.3x21600x21600.D2.png
