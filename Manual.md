@@ -11,7 +11,7 @@ Lo que se hace es un mapeo de la posición del pixel a coordenadas _(x,y) -> (lo
    * el pixel (5400, 0)    sera en latitud/longitud el punto(180, 90)
    * el pixel (0, 2700)    sera en latitud/longitud el punto(-180, -90)
    * el pixel (5400, 2700) sera en latitud/longitud el punto(180, -90)
-2. Usando la bandera __-a_ullr__ 
+2. Usando la bandera __-a_ullr__  
    Esta bandera unicamente necesita los puntos de la esquina superior izquierda y la esquina inferior derecha, y se utiliza de    la siguiente manera:
    
    __gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 imagen.jpg out3.tif__
