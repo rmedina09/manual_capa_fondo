@@ -26,3 +26,9 @@ Por medio de la utilidad __gdal_merge.py__ que crea un mosaico de manera automat
 
    __gdal_merge.py -o out_merge.tif file_1.tif file_2.tif . . . file_n.tif__
 
+--------------------------------
+## GENERAR PIRAMIDE DE MOSAICOS
+
+Para generar la piramide de mosaicos lo haremos por medio de la utilidad __gdal_retile.py__ , por ejemplo :
+
+__gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co "TILED=YES" -co "COMPRESS=JPEG" -targetDir *directorio* *input.tif*__
