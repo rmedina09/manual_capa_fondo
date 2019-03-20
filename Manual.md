@@ -39,7 +39,7 @@ __gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co "TILED=YES" -co "COM
 # GENERAR CAPA DE FONDO
 -------------------------------
 ### Descarga de Imagenes
-   Descargamos las 8 imagenes PNG del proyecto Blue Marble (*[ir a la página][1]*) :
+   Descargamos las 8 imagenes PNG del proyecto Blue Marble ( *[ir a la página][1]* ) :
    
    1. world.topo.bathy.200412.3x21600x21600.A1.png
    2. world.topo.bathy.200412.3x21600x21600.A2.png
@@ -50,7 +50,6 @@ __gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co "TILED=YES" -co "COM
    7. world.topo.bathy.200412.3x21600x21600.D1.png
    8. world.topo.bathy.200412.3x21600x21600.D2.png
    
-   [1]: https://visibleearth.nasa.gov/view.php?id=73909
 -------------------------------
 ### Georeferenciar imagenes
 
@@ -64,3 +63,5 @@ __gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co "TILED=YES" -co "COM
    6. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.C2.png C2.tif_
    7. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.D1.png D1.tif_
    8. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.D2.png D2.tif_
+
+   [1]: https://visibleearth.nasa.gov/view.php?id=73909
