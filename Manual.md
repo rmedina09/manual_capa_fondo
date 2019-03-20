@@ -11,8 +11,11 @@
    6. world.topo.bathy.200412.3x21600x21600.B2.png
    7. world.topo.bathy.200412.3x21600x21600.C2.png
    8. world.topo.bathy.200412.3x21600x21600.D2.png
-   
+
+
+
 -------------------------------
+
 ### Georeferenciar imagenes
 
    A cada imagen que descargamos hacemos la georefencia de coordenadas:  
