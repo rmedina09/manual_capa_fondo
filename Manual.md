@@ -7,8 +7,9 @@ Lo que se hace es un mapeo de la posición del pixel a coordenadas _(x,y) -> (lo
 
    Por ejemplo con una imagen de 5400 * 2400 :  
 __gdal_translate -gcp 0 0 -180 90 -gcp 5400 0 180 90 -gcp 0 2700 -180 -90 -gcp 5400 2700 180 -90 -a_srs EPSG:4326 imagen.png salida.tif__  
-   * el pixel (0,0) sera en latitud/longitud el punto(-180 90)
-   * el pixel (0,0) sera en latitud/longitud el punto(-180 90)
-   * el pixel (0,0) sera en latitud/longitud el punto(-180 90)
-   * el pixel (0,0) sera en latitud/longitud el punto(-180 90)
+   * el pixel (0, 0)       sera en latitud/longitud el punto(-180, 90)
+   * el pixel (5400, 0)    sera en latitud/longitud el punto(180, 90)
+   * el pixel (0, 2700)    sera en latitud/longitud el punto(-180, -90)
+   * el pixel (5400, 2700) sera en latitud/longitud el punto(180, -90)
+2. Usando la bandera __-a_ullr__ 
 2. Usando la bandera __-a_ullr__ 
