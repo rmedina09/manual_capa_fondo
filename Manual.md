@@ -32,3 +32,11 @@ Por medio de la utilidad __gdal_merge.py__ que crea un mosaico de manera automat
 Para generar la piramide de mosaicos lo haremos por medio de la utilidad __gdal_retile.py__ , por ejemplo :
 
 __gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co "TILED=YES" -co "COMPRESS=JPEG" -targetDir *directorio* *input.tif*__
+
+
+
+-------------------------------
+# CAPA DE FONDO
+-------------------------------
+### Descarga de Imagenes
+   Descargamos las 8 imagenes PNG de la página https://visibleearth.nasa.gov/view.php?id=73909
