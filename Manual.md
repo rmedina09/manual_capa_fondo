@@ -1,6 +1,6 @@
- |GUIA PARA GENERAR LA CAPA DE FONDO EN OWGIS  A PARTIR DE VARIAS IMAGENES .PNG|
- |:---------------------------------------------------------------------------:|
-## GEOREFERENCIAR UNA IMAGEN .PNG
+# GUIA PARA GENERAR LA CAPA DE FONDO EN OWGIS  A PARTIR DE VARIAS IMAGENES .PNG
+
+## Como georeferenciar una imagen .PNG
 #### Se tienen dos maneras para georeferenciar la imagen usando __gdal_translate__
 1. Usando la bandera __-gcp__  
 Lo que se hace es un mapeo de la posición del pixel a coordenadas _(x,y) -> (longitud,latitud)_
@@ -24,14 +24,14 @@ Lo que se hace es un mapeo de la posición del pixel a coordenadas _(x,y) -> (lo
    * _gdal_translate -a_srs tipo_proyeccion -a_ullr ulx uly lrx lry imagen.jpg out.tif_
    
 -------------------------------
-## UNIR VARIOS ARCHIVOS .tif
+## Como unir (mezclar) varios archivos .tif
 
 Por medio de la utilidad __gdal_merge.py__ que crea un mosaico de manera automatica a partir de un conjunto de imagenes (.tif), las cuales deben tener el mismo sistema de coordenadas. Se mezclan o unen el conjunto de imagenes que queremos manjear como una sola de la siguiente manera:
 
    __gdal_merge.py -o out_merge.tif file_1.tif file_2.tif . . . file_n.tif__
 
 --------------------------------
-## GENERAR PIRAMIDE DE MOSAICOS
+## Como generar una piramide de mosaicos
 
 Para generar la piramide de mosaicos lo haremos por medio de la utilidad __gdal_retile.py__ , por ejemplo :
 
@@ -40,7 +40,7 @@ __gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co "TILED=YES" -co "COM
 
 
 -------------------------------
-# GENERAR CAPA DE FONDO
+# PASOS PARA GENERAR LA CAPA DE FONDO
 -------------------------------
 ### Descarga de Imagenes
    Descargamos las 8 imagenes PNG del proyecto Blue Marble ( *[ir a la página][1]* ) :
