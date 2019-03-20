@@ -11,14 +11,18 @@ Lo que se hace es un mapeo de la posición del pixel a coordenadas _(x,y) -> (lo
    * el pixel (5400, 0)    sera en latitud/longitud el punto(180, 90)
    * el pixel (0, 2700)    sera en latitud/longitud el punto(-180, -90)
    * el pixel (5400, 2700) sera en latitud/longitud el punto(180, -90)
+   
 2. Usando la bandera __-a_ullr__  
-   Esta bandera unicamente necesita los puntos de la esquina superior izquierda y la esquina inferior derecha, y se utiliza de    la siguiente manera en una imagen de 5400 * 2400 (_gdal_translate -a_srs tipo_proyeccion -a_ullr ulx uly lrx lry imagen.jpg out.tif_):
+   Esta bandera unicamente necesita especificar a que las coordenas serán mapeadas los puntos de la esquina superior  
+   izquierda y la esquina inferior derecha, por ejemplo en una imagen de 5400 * 2400:
    
    __gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 imagen.jpg out3.tif__
    
    en donde el mapeo de la esquina superior izquierda (ulx, uly) = (0, 0) se hace a la coordenada (-180, 90) y de la esquina      inferior derecha (lrx, lry) = (5400, 2400) se hace a la coordenada (180,-90).  
    * ulx = upper left x , uly = upper left y
-   * lrx = lower right x, lry = lower right y
+   * lrx = lower right x, lry = lower right y  
+   * _gdal_translate -a_srs tipo_proyeccion -a_ullr ulx uly lrx lry imagen.jpg out.tif_
+   
 -------------------------------
 ## UNIR VARIOS ARCHIVOS .tif
 
@@ -42,12 +46,12 @@ __gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co "TILED=YES" -co "COM
    Descargamos las 8 imagenes PNG del proyecto Blue Marble ( *[ir a la página][1]* ) :
    
    1. world.topo.bathy.200412.3x21600x21600.A1.png
-   2. world.topo.bathy.200412.3x21600x21600.A2.png
-   3. world.topo.bathy.200412.3x21600x21600.B1.png
-   4. world.topo.bathy.200412.3x21600x21600.B2.png
-   5. world.topo.bathy.200412.3x21600x21600.C1.png
-   6. world.topo.bathy.200412.3x21600x21600.C2.png
-   7. world.topo.bathy.200412.3x21600x21600.D1.png
+   2. world.topo.bathy.200412.3x21600x21600.B1.png
+   3. world.topo.bathy.200412.3x21600x21600.C1.png
+   4. world.topo.bathy.200412.3x21600x21600.D1.png
+   5. world.topo.bathy.200412.3x21600x21600.A2.png
+   6. world.topo.bathy.200412.3x21600x21600.B2.png
+   7. world.topo.bathy.200412.3x21600x21600.C2.png
    8. world.topo.bathy.200412.3x21600x21600.D2.png
    
 -------------------------------
@@ -55,13 +59,13 @@ __gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co "TILED=YES" -co "COM
 
    A cada imagen que descargamos hacemos la georefencia de coordenadas:  
    
-   1. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.A1.png A1.tif_
-   2. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.A2.png A2.tif_
-   3. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.B1.png B1.tif_
-   4. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.B2.png B2.tif_
-   5. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.C1.png C1.tif_
-   6. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.C2.png C2.tif_
-   7. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.D1.png D1.tif_
-   8. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 world.topo.bathy.200412.3x21600x21600.D2.png D2.tif_
+   1. _gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 -90  0 world.topo.bathy.200412.3x21600x21600.A1.png A1.tif_
+   2. _gdal_translate -a_srs EPSG:4326 -a_ullr  -90 90   0  0 world.topo.bathy.200412.3x21600x21600.B1.png B1.tif_
+   3. _gdal_translate -a_srs EPSG:4326 -a_ullr    0 90  90  0 world.topo.bathy.200412.3x21600x21600.C1.png C1.tif_
+   4. _gdal_translate -a_srs EPSG:4326 -a_ullr   90 90 180  0 world.topo.bathy.200412.3x21600x21600.D1.png D1.tif_
+   5. _gdal_translate -a_srs EPSG:4326 -a_ullr -180  0 -90 90 world.topo.bathy.200412.3x21600x21600.A2.png A2.tif_
+   6. _gdal_translate -a_srs EPSG:4326 -a_ullr  -90  0   0 90 world.topo.bathy.200412.3x21600x21600.B2.png B2.tif_
+   7. _gdal_translate -a_srs EPSG:4326 -a_ullr    0  0  90 90 world.topo.bathy.200412.3x21600x21600.C2.png C2.tif_
+   8. _gdal_translate -a_srs EPSG:4326 -a_ullr   90  0 180 90 world.topo.bathy.200412.3x21600x21600.D2.png D2.tif_
 
    [1]: https://visibleearth.nasa.gov/view.php?id=73909
