@@ -4,7 +4,7 @@
 #### Se tienen dos maneras para georeferenciar la imagen usando __gdal_translate__
 1. Usando la bandera __-gcp__  
 Lo que se hace es un mapeo de la posición del pixel a coordenadas _(x,y) -> (longitud,latitud)  
-Por ejemplo con una imagen de 5400 * 2400 :  
+Por ejemplo con una imagen de _5400 * 2400_ :  
 __gdal_translate -gcp 0 0 -180 90 -gcp 5400 0 180 90 -gcp 0 2700 -180 -90 -gcp 5400 2700 180 -90 -a_srs EPSG:4326 imagen.png salida.tif__  
 hace que el pixel (0,0) sea el latitud/longitud (-180 90)
 2. Usando la bandera __-a_ullr__ 
