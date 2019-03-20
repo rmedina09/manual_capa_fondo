@@ -38,7 +38,12 @@
 ### Generamos la piramide de mosaicos
 
    _gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co "TILED=YES" -co "COMPRESS=JPEG" -targetDir *directorio*    *capa_fondo.tif*_
-
+  
+  
+  
+  
+  
+  
 ***************************
 # COMANDOS
 
