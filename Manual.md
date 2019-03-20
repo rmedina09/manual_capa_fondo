@@ -19,8 +19,10 @@ Lo que se hace es un mapeo de la posición del pixel a coordenadas _(x,y) -> (lo
    en donde el mapeo de la esquina superior izquierda (ulx, uly) = (0, 0) se hace a la coordenada (-180, 90) y de la esquina      inferior derecha (lrx, lry) = (5400, 2400) se hace a la coordenada (180,-90).  
    * ulx = upper left x , uly = upper left y
    * lrx = lower right x, lry = lower right y
-
+-------------------------------
 ## UNIR VARIOS ARCHIVOS .tif
 
-Por medio de la utilidad __gdal_merge.py__ que crea un mosaico de manera automatica a partir de un conjunto de imagenes (.tif), las cuales deben tener el mismo sistema de coordenadas. 
+Por medio de la utilidad __gdal_merge.py__ que crea un mosaico de manera automatica a partir de un conjunto de imagenes (.tif), las cuales deben tener el mismo sistema de coordenadas. Se mezclan o unen el conjunto de imagenes que queremos manjear como una sola de la siguiente manera:
+
+   __gdal_merge.py -o out_merge.tif file_1.tif file_2.tif . . . file_n.tif__
 
