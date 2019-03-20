@@ -36,10 +36,9 @@
 
    _gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co "TILED=YES" -co "COMPRESS=JPEG" -targetDir *directorio*    *capa_fondo.tif*_
 
-
-
- COMANDOS
-============================
+***************************
+# COMANDOS
+---------------------------
 ### Como georeferenciar una imagen .PNG
 #### Se tienen dos maneras para georeferenciar la imagen usando __gdal_translate__
 1. Usando la bandera __-gcp__  
