@@ -32,14 +32,14 @@
    _gdal_merge.py -o capa_fondo.tif A1.tif B1.tif C1.tif D1.tif A2.tif B2.tif C2.tif D2.tif_
    
 ------------------------------
-### Generamos la priramide de mosaicos
+### Generamos la piramide de mosaicos
 
    _gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co "TILED=YES" -co "COMPRESS=JPEG" -targetDir *directorio*    *capa_fondo.tif*_
 
 
--------------------------------
-# COMANDOS
--------------------------------
+
+ COMANDOS
+============================
 ### Como georeferenciar una imagen .PNG
 #### Se tienen dos maneras para georeferenciar la imagen usando __gdal_translate__
 1. Usando la bandera __-gcp__  
