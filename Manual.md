@@ -20,4 +20,7 @@ Lo que se hace es un mapeo de la posición del pixel a coordenadas _(x,y) -> (lo
    * ulx = upper left x , uly = upper left y
    * lrx = lower right x, lry = lower right y
 
+## UNIR VARIOS ARCHIVOS .tif
+
+Por medio de la utilidad __gdal_merge.py__ que crea un mosaico de manera automatica a partir de un conjunto de imagenes (.tif), las cuales deben tener el mismo sistema de coordenadas. 
 
