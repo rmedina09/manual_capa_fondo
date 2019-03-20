@@ -12,8 +12,6 @@
    7. __world.topo.bathy.200412.3x21600x21600.C2.png__
    8. __world.topo.bathy.200412.3x21600x21600.D2.png__
 
-
-
 -------------------------------
 
 ### Georeferenciar imagenes
@@ -39,12 +37,7 @@
 
    _**gdal_retile.py** -v -r bilinear -levels 4 -ps 2048 2048 -co "TILED=YES" -co "COMPRESS=JPEG" -targetDir *directorio*    *capa_fondo.tif*_
   
-  
-  
-  
-  
-  
-***************************
+************************************************************************************************************
 # COMANDOS
 
 ### Como georeferenciar una imagen .PNG
