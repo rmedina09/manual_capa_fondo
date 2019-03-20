@@ -68,4 +68,15 @@ __gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co "TILED=YES" -co "COM
    7. _gdal_translate -a_srs EPSG:4326 -a_ullr    0  0  90 90 world.topo.bathy.200412.3x21600x21600.C2.png C2.tif_
    8. _gdal_translate -a_srs EPSG:4326 -a_ullr   90  0 180 90 world.topo.bathy.200412.3x21600x21600.D2.png D2.tif_
 
-   [1]: https://visibleearth.nasa.gov/view.php?id=73909
+------------------------------
+### Mezclar los archivos .tif en un solo archivo .tif
+
+   _gdal_merge.py -o capa_fondo.tif A1.tif B1.tif C1.tif D1.tif A2.tif B2.tif C2.tif D2.tif_
+   
+------------------------------
+### Generamos la priramide de mosaicos
+
+   _gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co "TILED=YES" -co "COMPRESS=JPEG" -targetDir *directorio*    *capa_fondo.tif*_
+
+
+[1]: https://visibleearth.nasa.gov/view.php?id=73909
